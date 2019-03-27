@@ -1,0 +1,22 @@
+{
+  "name": "shamir-sharing",
+  "version": "1.0.0",
+  "description": "Shamir's Secret Sharing split and combine tool",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build_macos": "pkg -t macos -o bin/macos-shamir-split shamir-split.js && pkg -t macos -o bin/macos-shamir-combine shamir-combine.js",
+    "build_linux": "pkg -t linux -o bin/linux-shamir-split shamir-split.js && pkg -t linux -o bin/linux-shamir-combine shamir-combine.js",
+    "build_win": "pkg -t win -o bin/win-shamir-split shamir-split.js && pkg -t win -o bin/win-shamir-combine shamir-combine.js",
+    "build": "npm run build_macos && npm run build_linux && npm run build_win && cd bin && shasum -p -a 256 * > ../checksums/v$(cat ../package.json | jq -r \".version\").sha256"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themand/shamir-sharing.git"
+  },
+  "author": "Themand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/themand/shamir-sharing/issues"
+  },
+  "homepage": "https://github.com/themand/shamir-sharing#readme"
+}
