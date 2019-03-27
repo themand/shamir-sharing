@@ -1,4 +1,4 @@
-# Shamir's Secret Sharing split and restore tool
+# Shamir's Secret Sharing split and combine tool
 
 
 ### Credits
